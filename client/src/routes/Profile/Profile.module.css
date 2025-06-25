@@ -1,0 +1,408 @@
+body {margin: 0px;}
+.navContainer {
+    background-color: #889E7D;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.header {
+    width: 100%;
+}
+.title {
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 21px;
+}
+
+.nazv {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.cartIcon {
+    width: 55px;
+    height: 55px;
+}
+.profileIcon {
+    width: 55px;
+    height: 55px;
+}
+
+.mainContent {
+    background-color: #5A6352;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ordersContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.orderCard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #E1D0BF;
+  border-radius: 20px;
+  width: 500px;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  /* Плавный переход для hover-эффекта */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.orderProducts {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.productImage {
+    width: 200px;
+    height: 200px;
+}
+
+.orderDetails{
+    width: 100%;
+}
+
+.orderNumber {
+    font-size: 30px;
+    margin: 10px;
+}
+.orderTimer {
+    font-size: 25px;
+    margin: 10px;
+}
+
+.orderHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.infoLine {
+  font-size: 20px;
+  word-wrap: break-word; /* Перенос длинных слов */
+  overflow: hidden; /* Скрытие выходящего за границы текста */
+  text-overflow: ellipsis; /* Многоточие в конце */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Ограничение в 2 строки */
+  -webkit-box-orient: vertical;
+}
+
+.orderInfo {
+    margin-left: 20px;
+}
+
+.productTitle {
+    font-size: 20px;
+}
+
+.productPrice {
+    color: #889E7D;
+    font-size: 20px;
+}
+
+.productItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sectionTitle {
+    color: white;
+    font-size: 30px;
+}
+
+
+.section2 {
+    margin-top: 40px;
+    background-color: #373f38;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.favoritesGrid{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.favoriteCard {
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.favoriteInfo{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favoriteActions {
+    display: flex;
+    justify-content: space-between
+}
+.cartButton {
+    background:none;
+    border:none;
+    cursor: pointer;
+}
+
+.favoriteTitle {
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+}
+.favoritePrice{ 
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+}
+
+
+.section3 {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoItem {
+    color: white;
+    font-size: 20px;
+}
+
+.logoutButton{
+    background-color: #E1D0BF;
+    border: 0px;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 920px)  {
+    .orderCard{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 450px)  {
+    .ordersContainer {
+        flex-wrap: wrap;
+    }
+    .orderCard{
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* Добавляем в конец файла */
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(-10px) rotate(3deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes cardAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+@keyframes cardAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartBeat {
+  0% {transform: scale(1);}
+  15% {transform: scale(1.2);}
+  30% {transform: scale(1);}
+  45% {transform: scale(1.2);}
+  60% {transform: scale(1);}
+}
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.05);}
+  100% {transform: scale(1);}
+}
+@keyframes loadingPulse {
+  0% {opacity: 0.5;}
+  50% {opacity: 1;}
+  100% {opacity: 0.5;}
+}
+@keyframes pulseWarning {
+  0% {color: inherit;}
+  50% {color: #ff6b6b; transform: scale(1.05);}
+  100% {color: inherit;}
+}
+@keyframes iconPulse {
+  0% { transform: translateY(-5px) rotate(8deg) scale(1); }
+  50% { transform: translateY(-5px) rotate(8deg) scale(1.1); }
+  100% { transform: translateY(-5px) rotate(8deg) scale(1); }
+}
+
+
+/* Анимация карточек */
+.cardAnimation {
+  animation: cardAppear 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+/* Анимация иконки корзины */
+.bounce {
+  transition: transform 0.3s ease;
+}
+
+.bounce:hover {
+  animation: bounce 0.5s;
+}
+
+
+/* Анимация сердечка */
+.heartBeat {
+  transition: transform 0.3s ease;
+}
+
+.heartBeat:hover {
+  animation: heartBeat 0.8s infinite;
+}
+
+
+
+/* Анимация кнопки выхода */
+.pulseHover {
+  transition: all 0.4s ease;
+}
+
+.pulseHover:hover {
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 15px rgba(225, 208, 191, 0.8);
+}
+
+
+
+/* Анимация таймера при срочной доставке */
+.pulse {
+  animation: pulseWarning 2s infinite;
+}
+
+
+/* Анимация при наведении на карточки */
+.orderCard, .favoriteCard {
+  transition: all 0.3s ease;
+}
+
+.orderCard:hover {
+  transform: translateY(-5px) rotate(1deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.favoriteCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Анимация загрузки */
+.loading {
+  animation: loadingPulse 1.5s infinite;
+}
+
+
+
+/* Для мобильных отключаем сложные анимации */
+@media (max-width: 768px) {
+  .orderCard:hover, .favoriteCard:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .pulseHover:hover {
+    animation: none;
+  }
+    .iconHover:hover {
+    animation: none;
+    transform: none;
+    filter: none;
+  }
+
+}
+
+.cartIcon, .profileIcon {
+  transition: all 0.3s ease;
+}
+
+.iconHover {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.iconHover:hover {
+  transform: translateY(-5px) rotate(8deg);
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+  animation: iconPulse 0.8s infinite;
+}
+
+
+.orderCard {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.orderCard:hover {
+  transform: translateY(-10px) rotate(3deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.cardAnimation {
+  animation: cardAppear 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
