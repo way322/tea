@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { syncCart, initializeCart, clearCartDB, addToCartDB } from '../store/cartSlice';
+import { syncCart, initializeCart, addToCartDB } from '../store/cartSlice';
 import { logout } from '../store/authSlice';
 
 const AuthProvider = ({ children }) => {
