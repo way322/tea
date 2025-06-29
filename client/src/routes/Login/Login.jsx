@@ -14,31 +14,36 @@ const Login = () => {
   const { isAuthenticated } = useSelector(state => state.auth);
   const navigate = useNavigate();
   const { loading, error } = useSelector(state => state.auth);
+  
   const [formData, setFormData] = useState({
     phone: '',
     password: ''
   });
+  const [showPassword, setShowPassword] = useState(false); // Состояние для отображения пароля
+
   const handleCartClick = (e) => {
     if (!isAuthenticated) {
       e.preventDefault();
       navigate('/login');
     }
   };
-   const handlePhoneChange = (e) => {
+  
+  const handlePhoneChange = (e) => {
     const formattedPhone = formatPhone(e.target.value);
     setFormData({ ...formData, phone: formattedPhone });
   };
+  
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       dispatch(loginStart());
       const cleanedPhone = formData.phone.replace(/\D/g, '');
-      console.log('Данные для отправки на сервер:', {
-        phone: cleanedPhone,
-        password: formData.password
-      });
       const response = await axios.post('http://localhost:5000/api/auth/login', {
-        phone: formData.phone, 
+        phone: cleanedPhone, 
         password: formData.password
       });
   
@@ -55,6 +60,7 @@ const Login = () => {
       dispatch(loginFailure(errorMessage));
     }
   };
+  
   return (
     <div className={l.container}>
       <header className={l.header}>
@@ -76,50 +82,59 @@ const Login = () => {
         </div>
       </header>
       <div className={l.aContainer}>
-      <div className={l.authContainer}>
-        <h2 className={l.authTitle}>Вход</h2>
-        <form onSubmit={handleSubmit} className={l.authForm}>
-          <div className={l.input}>
-          <div className={l.formGroup}>
-            <input
-              type="tel"
-              placeholder="+7 999 123 45 67"
-              pattern="\+7\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}"
-              required
-              className={l.formInput}
-              value={formData.phone}
-              onChange={handlePhoneChange}
-            />
-          </div>
+        <div className={l.authContainer}>
+          <h2 className={l.authTitle}>Вход</h2>
+          <form onSubmit={handleSubmit} className={l.authForm}>
+            <div className={l.input}>
+              <div className={l.formGroup}>
+                <input
+                  type="tel"
+                  placeholder="+7 999 123 45 67"
+                  pattern="\+7\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}"
+                  required
+                  className={l.formInput}
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                />
+              </div>
 
-          <div className={l.formGroup}>
-            <input
-              type="password"
-              placeholder="Пароль"
-              required
-              className={l.formInput}
-              value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            />
-          </div>
-          </div>
+              <div className={l.formGroup}>
+                <div style={{ position: 'relative' }}>
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    placeholder="Пароль"
+                    required
+                    className={l.formInput}
+                    value={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  />
+                  <button
+                    type="button"
+                    className={l.toggleButton}
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? 'Скрыть' : 'Показать'}
+                  </button>
+                </div>
+              </div>
+            </div>
 
-          {error && <p className={l.errorMessage}>{error}</p>}
+            {error && <p className={l.errorMessage}>{error}</p>}
 
-          <button 
-            type="submit" 
-            className={l.submitButton} 
-            disabled={loading}
-          >
-            {loading ? 'Загрузка...' : 'Войти'}
-          </button>
-        </form>
+            <button 
+              type="submit" 
+              className={l.submitButton} 
+              disabled={loading}
+            >
+              {loading ? 'Загрузка...' : 'Войти'}
+            </button>
+          </form>
 
-        <p className={l.authSwitch}>
-          Нет аккаунта?
-          <Link to="/register" className={l.switchLink}>Зарегистрироваться</Link>
-        </p>
-      </div>
+          <p className={l.authSwitch}>
+            Нет аккаунта?
+            <Link to="/register" className={l.switchLink}>Зарегистрироваться</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

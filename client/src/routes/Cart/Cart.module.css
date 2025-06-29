@@ -230,6 +230,19 @@ body {margin: 0px;
     }
         .cartItems {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+        .cartItem {
+          flex-direction: column;
+          height: 100%;
+          width: 280px;
+          border-radius: 80px;
+    }
+    .itemImage{
+      margin-top: 20px;
     }
 }
 

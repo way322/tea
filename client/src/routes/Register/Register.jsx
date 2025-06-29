@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
-
 import { registerStart, registerSuccess, registerFailure } from '../../store/authSlice';
 import korzina from '../../img/korzina.png';
 import Logo from '../../img/Logo.png';
@@ -21,6 +19,10 @@ const Register = () => {
     confirmPassword: ''
   });
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState({
+    password: false,
+    confirmPassword: false
+  });
 
   const handleCartClick = (e) => {
     if (!isAuthenticated) {
@@ -28,10 +30,12 @@ const Register = () => {
       navigate('/login');
     }
   };
+  
   const handlePhoneChange = (e) => {
     const formattedPhone = formatPhone(e.target.value);
     setFormData({ ...formData, phone: formattedPhone });
   };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -105,26 +109,52 @@ const Register = () => {
                   onChange={handlePhoneChange}
                 />
               </div>
+              
               <div className={r.formGroup}>
-                <input
-                  type="password"
-                  placeholder="Пароль"
-                  minLength="8"
-                  required
-                  className={r.formInput}
-                  value={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                />
+                <div style={{ position: 'relative' }}>
+                  <input
+                    type={showPassword.password ? 'text' : 'password'}
+                    placeholder="Пароль"
+                    minLength="8"
+                    required
+                    className={r.formInput}
+                    value={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  />
+                  <button
+                    type="button"
+                    className={r.toggleButton}
+                    onClick={() => setShowPassword({
+                      ...showPassword,
+                      password: !showPassword.password
+                    })}
+                  >
+                    {showPassword.password ? 'Скрыть' : 'Показать'}
+                  </button>
+                </div>
               </div>
+              
               <div className={r.formGroup}>
-                <input
-                  type="password"
-                  placeholder="Повторите пароль"
-                  required
-                  className={r.formInput}
-                  value={formData.confirmPassword}
-                  onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                />
+                <div style={{ position: 'relative' }}>
+                  <input
+                    type={showPassword.confirmPassword ? 'text' : 'password'}
+                    placeholder="Повторите пароль"
+                    required
+                    className={r.formInput}
+                    value={formData.confirmPassword}
+                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                  />
+                  <button
+                    type="button"
+                    className={r.toggleButton}
+                    onClick={() => setShowPassword({
+                      ...showPassword,
+                      confirmPassword: !showPassword.confirmPassword
+                    })}
+                  >
+                    {showPassword.confirmPassword ? 'Скрыть' : 'Показать'}
+                  </button>
+                </div>
               </div>
             </div>
   
