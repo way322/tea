@@ -171,6 +171,9 @@ body {margin: 0px;
 
 
 @media (max-width: 820px)  {
+    .chaynikImage {
+    animation: none !important;
+    }
     .itemImage {
         width: 160px;
         height: 160px;
@@ -323,6 +326,7 @@ body {margin: 0px;
 /* Адаптация для мобильных */
 @media (max-width: 768px) {
   .iconHover:hover {
+
     animation: none;
     transform: none;
     filter: none;

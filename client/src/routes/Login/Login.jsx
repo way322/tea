@@ -6,7 +6,7 @@ import korzina from '../../img/korzina.png';
 import Logo from '../../img/Logo.png';
 import Person from '../../img/Person.png';
 import axios from 'axios';
-
+import { formatPhone } from '../../utils/formatPhone';
 import l from './Login.module.css'
 
 const Login = () => {
@@ -23,6 +23,10 @@ const Login = () => {
       e.preventDefault();
       navigate('/login');
     }
+  };
+   const handlePhoneChange = (e) => {
+    const formattedPhone = formatPhone(e.target.value);
+    setFormData({ ...formData, phone: formattedPhone });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +88,7 @@ const Login = () => {
               required
               className={l.formInput}
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={handlePhoneChange}
             />
           </div>
 

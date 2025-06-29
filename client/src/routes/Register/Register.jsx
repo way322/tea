@@ -8,7 +8,7 @@ import { registerStart, registerSuccess, registerFailure } from '../../store/aut
 import korzina from '../../img/korzina.png';
 import Logo from '../../img/Logo.png';
 import Person from '../../img/Person.png';
-
+import { formatPhone } from '../../utils/formatPhone';
 import r from './Register.module.css'
 
 const Register = () => {
@@ -28,7 +28,10 @@ const Register = () => {
       navigate('/login');
     }
   };
-
+  const handlePhoneChange = (e) => {
+    const formattedPhone = formatPhone(e.target.value);
+    setFormData({ ...formData, phone: formattedPhone });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -99,7 +102,7 @@ const Register = () => {
                   required
                   className={r.formInput}
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={handlePhoneChange}
                 />
               </div>
               <div className={r.formGroup}>

@@ -188,7 +188,7 @@ const Cart = () => {
 
             <input
               className={s.inputField}
-              placeholder={`Адрес (макс. ${MAX_ADDRESS_LENGTH} символов)`}
+              placeholder={`Адрес`}
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               maxLength={MAX_ADDRESS_LENGTH}
@@ -196,7 +196,7 @@ const Cart = () => {
 
             <input
               className={s.inputField}
-              placeholder={`Ваше имя (макс. ${MAX_NAME_LENGTH} символов)`}
+              placeholder={`Ваше имя`}
               value={name}
               onChange={(e) => setName(e.target.value)}
               maxLength={MAX_NAME_LENGTH}
