@@ -1,0 +1,464 @@
+body {margin: 0px;}
+.navContainer {
+    background-color: #889E7D;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.header {
+    width: 100%;
+}
+.title {
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 21px;
+}
+
+.nazv {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.cartIcon {
+    width: 55px;
+    height: 55px;
+}
+.profileIcon {
+    width: 55px;
+    height: 55px;
+}
+
+
+
+
+
+
+.heroSection {
+    background-image: url('../../img/fon.png'); 
+    height: 866px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+
+.heroContent{
+    background-color: rgb(217, 217, 217, 75%);
+    width: 550px;
+    height: 586px;
+    margin-left: 60px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.heroTitle {
+    font-size: 45px;
+}
+.heroText {
+    width: 450px;
+    font-size: 27px;
+    text-align: center;
+    color: #2E2E2E;
+}
+
+.catalogButton {
+    width: 300px;
+    height: 80px;
+    margin-top: 20px;
+    background-color: #65745D;
+    border: 0px;
+    border-radius: 40px;
+    color: white;
+    font-size: 30px;
+}
+
+.teaTypesSection {
+    margin-top: 100px;
+    background-color: #E1D0BF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.teaTypesGrid {
+    display: flex;
+    width: 1800px;
+    justify-content: space-between;
+}
+
+.teaTypeCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teaTypeName {
+    font-size: 30px;
+    color: #35312b;
+    
+}
+
+.sectionTitle {
+    font-size: 40px;
+    text-decoration: underline;
+
+}
+
+.productsGrid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1400px;
+    justify-content: space-between;
+    align-content: space-around;
+    height: 1400px;
+}    
+
+.catalogSection {
+    background-color: #E1D0BF;
+    width: 1600px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    height: 1300px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.productTitle {
+    font-size: 30px;
+    color: #3d3b38;
+}
+.productPrice {
+    color: #889E7D;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+.productActions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.productInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartButton {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+}
+
+.favoriteButton {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+}
+
+
+.infoSection {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    background-color: #889E7D;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.infoCard {
+    display: flex;    
+    align-items: center;
+}
+
+.infoTitle { 
+    color: white;
+    font-size: 26px;
+}
+
+.infoIcon { 
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.infoText {
+    color: white;
+    font-size: 18px;
+    width: 320px;
+}
+
+
+
+@media (max-width: 820px)  {
+    .teaTypesGrid {}
+    .catalogSection {width: 650px; height: 1850px;}
+    .productImage{width: 220px; height: 220px;}
+    .productsGrid{width: 600px; height: 1850px;}
+    .teaTypesGrid{
+        width: 100%; 
+        display: flex; 
+        flex-wrap: wrap;
+    }
+    .teaTypeImage {
+        width: 240px;
+    }
+    .heroSection{
+        background-position: 90% center;
+    }
+}
+
+@media (max-width: 450px)  {
+     .catalogSection {width: 100%; height: 4100px;}
+     .productsGrid{width: 300px; height: 1850px;}
+     .productImage{width: 300px; height: 300px;}
+
+     .productTitle{font-size: 27px;}
+        .teaTypeImage{
+        width: 160px;
+        height: 160px;
+     }
+     .teaTypeName {
+        font-size: 24px;
+     }
+     .heroContent{
+        width: 320px;
+        height: 500px;
+        margin-left: 10px;
+     }
+     .heroTitle{font-size: 28px;}
+     .heroText{
+        font-size: 22px;
+        width: 310px;
+    }
+    .catalogButton {
+        width: 200px;
+        height: 50px;
+    }
+    .infoIcon {
+        width: 60px;
+        height: 60px;
+    }
+    .infoTitle{
+        font-size: 24px;
+    }
+    .infoText{
+        font-size: 20px;
+        width: 230px;
+    }
+}
+
+/* Добавляем в начало CSS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-15px);}
+  60% {transform: translateY(-7px);}
+}
+
+/* Анимация для хедера */
+.navContainer {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Герой-секция */
+.heroSection {
+  animation: fadeIn 1.2s ease-out;
+}
+
+.heroContent {
+  animation: slideUp 0.8s ease-out 0.3s both;
+}
+
+/* Анимация кнопки */
+.catalogButton {
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.catalogButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.catalogButton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.catalogButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.catalogButton:hover::after {
+  transform: translateX(0);
+}
+
+/* Карточки чая */
+.teaTypeCard {
+  transition: all 0.4s ease;
+  transform-origin: center bottom;
+}
+
+.teaTypeCard:hover {
+  transform: translateY(-10px) scale(1.03);
+  animation: pulse 2s infinite;
+}
+
+.teaTypeImage {
+  transition: transform 0.5s ease;
+}
+
+.teaTypeCard:hover .teaTypeImage {
+  transform: rotate(-2deg);
+}
+
+/* Карточки товаров */
+.productCard {
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: slideUp 0.6s forwards;
+}
+
+/* Задержка для каждой карточки */
+.productCard:nth-child(1) { animation-delay: 0.1s; }
+.productCard:nth-child(2) { animation-delay: 0.2s; }
+.productCard:nth-child(3) { animation-delay: 0.3s; }
+.productCard:nth-child(4) { animation-delay: 0.4s; }
+.productCard:nth-child(5) { animation-delay: 0.5s; }
+.productCard:nth-child(6) { animation-delay: 0.6s; }
+
+.productCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Иконки действий */
+.cartButton, .favoriteButton {
+  transition: all 0.3s ease;
+}
+
+.cartButton:hover {
+  animation: bounce 0.8s;
+}
+
+.favoriteButton:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Информационные карточки */
+.infoCard {
+  transition: all 0.4s ease;
+  opacity: 0;
+  animation: slideUp 0.5s forwards;
+}
+
+.infoCard:nth-child(1) { animation-delay: 0.2s; }
+.infoCard:nth-child(2) { animation-delay: 0.4s; }
+.infoCard:nth-child(3) { animation-delay: 0.6s; }
+.infoCard:nth-child(4) { animation-delay: 0.8s; }
+
+.infoCard:hover {
+  transform: scale(1.03);
+}
+
+.infoIcon {
+  transition: transform 0.5s ease;
+}
+
+.infoCard:hover .infoIcon {
+  transform: rotate(5deg);
+}
+
+/* Иконки в хедере */
+.cartIcon, .profileIcon {
+  transition: all 0.3s ease;
+}
+
+.cartIcon:hover, .profileIcon:hover {
+  transform: translateY(-3px) rotate(5deg);
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+/* Адаптация анимаций для мобильных */
+@media (max-width: 820px)  {
+  .catalogButton:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .teaTypeCard:hover {
+    transform: none;
+    animation: none;
+  }
+  
+  .productCard:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .infoCard:hover {
+    transform: none;
+  }
+}

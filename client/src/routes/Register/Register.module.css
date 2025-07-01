@@ -1,0 +1,151 @@
+body {margin: 0px;}
+.navContainer {
+    background-color: #889E7D;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.header {
+    width: 100%;
+}
+.title {
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 21px;
+}
+
+.nazv {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.cartIcon {
+    width: 55px;
+    height: 55px;
+}
+.profileIcon {
+    width: 55px;
+    height: 55px;
+}
+
+
+.container {
+    background-color: #5A6352;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+}
+
+.authContainer {
+
+    background-color: #889E7D;
+    width: 600px;
+    height: 700px;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap
+}
+
+.formInput {
+    width: 400px;
+    height: 80px;
+    background-color: #607356;
+    border-radius: 40px;
+    border: 0px;
+    box-shadow: 0 0 0 1000px #607356 inset !important; /* Переопределяет желтый фон */
+    -webkit-text-fill-color: #d5d5d5 !important; /* Цвет текста */
+    margin-bottom: 50px;
+    padding-left: 30px;
+    font-size: 20px;
+}
+
+.inputField:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0px;
+}
+
+.input {
+    height: 400px;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.submitButton {
+    background-color: #607356;
+    width: 200px;
+    height: 60px;
+    border: 0px;
+    border-radius: 40px;
+    color: white;
+    font-size: 20px;
+}
+
+.authTitle {
+    color: white;
+    font-size: 40px;
+}
+
+.authSwitch{
+    color: white;
+    font-size: 20px;
+}
+
+.switchLink{
+    color: rgb(241, 238, 4);
+    margin-left: 10px;
+}
+
+@media (max-width: 450px)  {
+    .formInput {
+        width: 300px;
+    }
+}
+
+.toggleButton {
+  position: absolute;
+  right: 20px;
+  top: 33%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #d5d5d5;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.toggleButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

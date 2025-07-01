@@ -1,0 +1,169 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem;
+}
+
+.space {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 3rem;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  animation: twinkle 10s infinite linear;
+}
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at 30% 30%, #4facfe, #00f2fe);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    inset -20px -20px 40px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(100, 200, 255, 0.4);
+  animation: rotate 30s infinite linear;
+}
+
+.astronaut {
+  position: absolute;
+  top: 70%;
+  left: 85%;
+  width: 60px;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="30" r="20" fill="%23fff"/><rect x="40" y="50" width="20" height="40" fill="%23fff"/><rect x="30" y="55" width="10" height="30" fill="%23fff"/><rect x="60" y="55" width="10" height="30" fill="%23fff"/></svg>') no-repeat center;
+  background-size: contain;
+  animation: float 8s infinite ease-in-out;
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 8rem;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(100, 200, 255, 0.7);
+  animation: pulse 2s infinite;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #a0d2ff;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #cce6ff;
+}
+
+.homeButton {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  color: #0f2027;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.homeButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.homeButton:active {
+  transform: translateY(1px);
+}
+
+.homeButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.homeButton:hover::after {
+  left: 100%;
+}
+
+/* Анимации */
+@keyframes twinkle {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+@keyframes rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes pulse {
+  0% { text-shadow: 0 0 10px rgba(100, 200, 255, 0.5); }
+  50% { text-shadow: 0 0 30px rgba(100, 200, 255, 1), 0 0 60px rgba(100, 200, 255, 0.5); }
+  100% { text-shadow: 0 0 10px rgba(100, 200, 255, 0.5); }
+}
+
+@media (max-width: 768px) {
+  .space {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .planet {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .title {
+    font-size: 6rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
